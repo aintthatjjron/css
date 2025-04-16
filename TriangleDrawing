@@ -1,0 +1,49 @@
+# once again, my code was said to be AI, for using arguably the best options in functions in terms of definitive loops, and such. i will try my best to write this, in the simplest way i can.
+
+ 
+
+# get turtle module
+
+import turtle
+
+# this will set up the screen for the thing
+wn = turtle.Screen()
+wn.bgcolor("white")
+wn.title("Triangle Drawer")
+
+# we must define "turtle" is
+tri = turtle.Turtle()
+tri.speed(1)
+
+# whats the largest number a user can enter?
+maxValue = 250
+
+# ask for a side length
+side = int(input("Enter a number less than or equal to " + str(maxValue) + ": "))
+
+# which color? what to draw
+if side > maxValue:
+    tri.color("black")
+    side = 50
+else:
+    if side >= 0 and side <= 100:
+        tri.color("red")
+    elif side >= 101 and side <= 200:
+        tri.color("blue")
+    elif side >= 201 and side <= maxValue:
+        tri.color("green")
+
+# now, we obviously have to draw  the triangle (equilateral: all sides equal, 120 degree turns)
+tri.penup()
+tri.goto(0, 0)
+tri.setheading(0)
+tri.pendown()
+
+for i in range(3):
+    tri.forward(side)
+    tri.left(120)
+
+# lets keep the window open
+wn.mainloop()
+
+# this is genuinly the simplest that i am able to put this request.
