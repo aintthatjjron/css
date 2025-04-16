@@ -1,0 +1,50 @@
+# i suppose i can see how one would think this was not in-scope of class material. but im not sure. there isnt any function definitions, like i normally would do. maybe it was the nested loops, but either way, i will try my hardest, to again simplify the code.
+
+# as always, get the turtle module.
+
+import turtle
+
+# make the screen so we can see it
+wn = turtle.Screen()
+wn.bgcolor("white")
+wn.title("Stairway to the Sky")
+
+# now we define what turtle is 
+t = turtle.Turtle()
+t.speed(0)  # basically a V8 twinturbo'd engine
+
+# where will the turtle start?
+t.penup()
+t.goto(-200, -200)
+t.pendown()
+
+# move 20 steps. the first 10 will be red, and the next 10 will be blue
+for step in range(20):
+    if step < 10:
+        t.color("red")
+    else:
+        t.color("blue")
+    
+    t.forward(30)  # goes forward
+    t.left(90)
+    t.forward(30)  # goes up
+    t.right(90)
+
+# we must go to the place where we want to draw the starburst
+t.penup()
+t.forward(30)
+t.left(90)
+t.forward(30)
+t.pendown()
+
+# make a square rotated 20 degrees each time to make a starburst shape thingy
+# uses a simple loop to rotate and draw (i cant make it any simpler.)
+t.color("black") #best color bar none
+for turn in range(18):  # 360 / 20 = 18 steps
+    for side in range(4):  # will draw a square
+        t.forward(100)
+        t.right(90)
+    t.right(20)
+
+# lets keep the window open
+wn.mainloop()
