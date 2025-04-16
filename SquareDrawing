@@ -1,0 +1,66 @@
+# This program asks the user for sizes and colors of 3 squares and draws them.
+
+# This previous version of this code was deemed as AI, due to me using external repositories for "Easier" functionality with the code. Didn't think it would lead to be determined as AI. So, sorry about that.
+
+# first thing we have to do is get user input for sizes between 100 and 200
+square1_size = int(input("Enter a size between 100 and 200 for square 1: "))
+square2_size = int(input("Enter a size between 100 and 200 for square 2: "))
+square3_size = int(input("Enter a size between 100 and 200 for square 3: "))
+
+# after requesting input sizes, we need user input for colors
+square1_color = input("Enter a color for square 1: ")
+square2_color = input("Enter a color for square 2: ")
+square3_color = input("Enter a color for square 3: ")
+
+# unfortunately, we now have to write the squares manually without functions i guess
+import turtle
+t = turtle.Turtle()
+
+# this will be square 1
+t.color(square1_color)
+t.begin_fill()
+t.forward(square1_size)
+t.right(90)
+t.forward(square1_size)
+t.right(90)
+t.forward(square1_size)
+t.right(90)
+t.forward(square1_size)
+t.end_fill()
+
+# go next position for next square
+t.penup()
+t.forward(square1_size + 20)
+t.pendown()
+
+# this will be square 2
+t.color(square2_color)
+t.begin_fill()
+t.forward(square2_size)
+t.right(90)
+t.forward(square2_size)
+t.right(90)
+t.forward(square2_size)
+t.right(90)
+t.forward(square2_size)
+t.end_fill()
+
+# gotta go to next 3rd square position
+t.penup()
+t.forward(square2_size + 20)
+t.pendown()
+
+# now we draw square 3
+t.color(square3_color)
+t.begin_fill()
+t.forward(square3_size)
+t.right(90)
+t.forward(square3_size)
+t.right(90)
+t.forward(square3_size)
+t.right(90)
+t.forward(square3_size)
+t.end_fill()
+
+# boom
+turtle.done()
